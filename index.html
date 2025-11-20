@@ -10,29 +10,52 @@
 <body>
     <div class="container">
         <div class="login-box">
-            <h1>Login</h1>
-            <form>
+            <h1>เข้าสู่ระบบ</h1>
+            <form id="loginForm">
                 <div class="input-group">
-                    <input type="text" placeholder="Username" required>
+                    <input type="text" id="username" placeholder="Username" required>
                     <i class="icon fas fa-user"></i>
                 </div>
                 <div class="input-group">
-                    <input type="password" placeholder="Password" required>
+                    <input type="password" id="password" placeholder="Password" required>
                     <i class="icon fas fa-lock"></i>
                 </div>
                 <div class="options">
                     <label>
-                        <input type="checkbox"> Remember me
+                        <input type="checkbox"> จดจำฉัน
                     </label>
-                    <a href="#">Forgot password?</a>
+                    <a href="#">ลืมรหัสผ่าน?</a>
                 </div>
-                <button type="submit" class="login-button">Login</button>
+                <button type="submit" class="login-button">เข้าสู่ระบบ</button>
             </form>
             <div class="register-link">
-                Don't have an account? <a href="#">Register</a>
+                ยังไม่มีบัญชี? <a href="#">ลงทะเบียน</a>
             </div>
         </div>
     </div>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<script>
+    // ********* ระบบตรวจสอบการเข้าสู่ระบบ *********
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // หยุดการส่งฟอร์มปกติ
+
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        // กำหนดข้อมูลที่ถูกต้อง
+        const correctUsername = 'puodaued';
+        const correctPassword = '00000000';
+
+        if (username === correctUsername && password === correctPassword) {
+            // เข้าสู่ระบบสำเร็จ: เปลี่ยนไปหน้า inside.html
+            window.location.href = 'inside.html';
+        } else {
+            // เข้าสู่ระบบไม่สำเร็จ: แจ้งเตือน
+            alert('ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง กรุณาลองใหม่');
+        }
+    });
+</script>
 </body>
 </html>
