@@ -2,10 +2,37 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
-    <title>เว็บไซต์แรกของฉัน</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>ยินดีต้อนรับสู่เว็บไซต์ของฉัน</h1>
-    <p>นี่คือข้อความทดสอบจาก Cloudflare Pages และ GitHub!</p>
+    <div class="container">
+        <div class="login-box">
+            <h1>Login</h1>
+            <form>
+                <div class="input-group">
+                    <input type="text" placeholder="Username" required>
+                    <i class="icon fas fa-user"></i>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Password" required>
+                    <i class="icon fas fa-lock"></i>
+                </div>
+                <div class="options">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="#">Forgot password?</a>
+                </div>
+                <button type="submit" class="login-button">Login</button>
+            </form>
+            <div class="register-link">
+                Don't have an account? <a href="#">Register</a>
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
