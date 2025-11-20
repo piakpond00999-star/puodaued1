@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); /* Fallback background */
+    overflow: hidden; /* Hide potential overflow from background */
+    position: relative;
+    color: #fff;
+}
+
+/* Background image for the starry forest effect */
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://user-images.githubusercontent.com/97858688/285579954-c922572a-43cf-4299-8260-84c1f6c44919.png'); /* Replace with a suitable image URL */
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    filter: brightness(0.7); /* Darken the background a bit */
+}
+
+.login-box {
+    background: rgba(255, 255, 255, 0.15); /* Glassmorphism effect */
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 40px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(10px); /* Blur effect */
+    -webkit-backdrop-filter: blur(10px);
+    text-align: center;
+    width: 350px;
+    max-width: 90%;
+    z-index: 1; /* Ensure it's above the background */
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group input {
+    width: calc(100% - 40px); /* Adjust width for icon */
+    padding: 12px 20px 12px 20px; /* Padding for text input */
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1em;
+    outline: none;
+    transition: all 0.3s ease;
+    padding-left: 45px; /* Space for icon */
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.input-group input:focus {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+.input-group .icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1em;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 0.9em;
+}
+
+.options label {
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+}
+
+.options input[type="checkbox"] {
+    margin-right: 8px;
+    accent-color: #bb62e6; /* Purple color for checkbox */
+}
+
+.options a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.options a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.login-button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(90deg, #bb62e6 0%, #a44cdc 100%); /* Purple gradient */
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.login-button:hover {
+    background: linear-gradient(90deg, #a44cdc 0%, #bb62e6 100%);
+    transform: translateY(-2px);
+}
+
+.register-link {
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.register-link a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.register-link a:hover {
+    color: #bb62e6; /* Highlight on hover */
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .login-box {
+        padding: 30px;
+        width: 100%;
+        border-radius: 15px;
+    }
+    h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+    .input-group input {
+        padding: 10px 15px 10px 40px;
+        font-size: 0.95em;
+    }
+    .input-group .icon {
+        left: 12px;
+        font-size: 1em;
+    }
+    .options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 0.85em;
+    }
+    .login-button {
+        padding: 12px;
+        font-size: 1em;
+    }
+    .register-link {
+        margin-top: 20px;
+        font-size: 0.85em;
+    }
+}
